@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Twinsen_ConfigurableCustomerId>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+
+            </depends>
+        </Twinsen_ConfigurableCustomerId>
+    </modules>
+</config>

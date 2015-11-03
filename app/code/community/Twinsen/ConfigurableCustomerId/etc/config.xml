@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Twinsen_ConfigurableCustomerId>
+            <version>1.0.0</version>
+        </Twinsen_ConfigurableCustomerId>
+    </modules>
+    <global>
+        <models>
+            <twinsen_configurablecustomerid>
+                <class>Twinsen_ConfigurableCustomerId_Model</class>                
+            </twinsen_configurablecustomerid>
+        </models>
+        <blocks>
+            
+        </blocks>
+        <helpers>
+            <twinsen_configurablecustomerid>
+                <class>Twinsen_CustomerPrefix_Helper</class>
+            </twinsen_configurablecustomerid>
+        </helpers>
+
+        <events>
+
+            <customer_save_before>
+                <observers>
+                    <twinsen_customerprefix_save_observer>
+                        <type>singleton</type>
+                        <class>Twinsen_ConfigurableCustomerId_Model_Observer</class>
+                        <method>customer_save_before</method>
+                    </twinsen_customerprefix_save_observer>
+                </observers>
+            </customer_save_before>
+
+
+            <adminhtml_store_edit_form_prepare_form>
+                <observers>
+                    <twinsen_configurablecustomerid_adminhtml_store_edit_form_prepare_form>
+                        <type>singleton</type>
+                        <class>Twinsen_ConfigurableCustomerId_Model_Observer</class>
+                        <method>adminhtml_store_edit_form_prepare_form</method>
+                    </twinsen_configurablecustomerid_adminhtml_store_edit_form_prepare_form>
+                </observers>
+            </adminhtml_store_edit_form_prepare_form>
+
+
+
+        </events>
+
+        <resources>
+            <twinsen_configurablecustomerid_setup>
+                <setup>
+                    <module>Twinsen_ConfigurableCustomerId</module>
+                    <class>Mage_Catalog_Model_Resource_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </twinsen_configurablecustomerid_setup>
+
+            <twinsen_configurablecustomerid_setup_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </twinsen_configurablecustomerid_setup_write>
+            <twinsen_configurablecustomerid_setup_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </twinsen_configurablecustomerid_setup_read>
+        </resources>
+
+    </global>
+</config>
